@@ -78,5 +78,4 @@ wget==3.2
 img2html
 googletrans-py
 git+https://github.com/rogerpq/bbbb
-git+https://github.com/rogerpq/Galqg
 git+https://github.com/alexmercerind/youtube-search-python
