@@ -67,6 +67,7 @@ sqlalchemy-json
 sqlalchemy==1.3.23
 telegraph
 tgcrypto
+Tgcrypto
 ujson
 urlextract
 user_agent
@@ -78,3 +79,4 @@ img2html
 googletrans-py
 git+https://github.com/rogerpq/bbbb
 git+https://github.com/rogerpq/Galqg
+git+https://github.com/alexmercerind/youtube-search-python
