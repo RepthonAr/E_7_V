@@ -1,11 +1,14 @@
-FROM nikolaik/python-nodejs:python3.9-nodejs18
-RUN apt-get update -y && apt-get upgrade -y \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-COPY . /app/
-WORKDIR /app/
-RUN pip3 install --upgrade pip
-RUN pip3 install -U -r requirements.txt
-EXPOSE 8080
-CMD ["bash","repub"]
+FROM RepthonArabic/Repthon:slim-buster
+
+RUN git clone https://github.com/RepthonArabic/Repthon.git /root/repthon
+
+WORKDIR /root/repthon
+
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
+RUN npm i -g npm
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+ENV PATH="/home/repthon/bin:$PATH"
+
+CMD ["python3","-m","repthon"]
