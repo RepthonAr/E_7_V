@@ -15,9 +15,9 @@ services:
       - key: ALIVE_NAME
         sync: false
       - key: APP_ID
-        value: 13740761
+        sync: false
       - key: API_HASH
-        value: 4ce319a92c01fab2b02551af8d7f73a4
+        sync: false
       - key: ENV
         value: ANYTHING
       - key: STRING_SESSION
