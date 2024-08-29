@@ -1,14 +1,12 @@
-FROM Repthon-Arabic/Repthon:slim-buster
-
-RUN git clone https://github.com/Repthon-Arabic/Repthon.git /root/repthon
-
-WORKDIR /root/repthon
-
+FROM python:3.12.5
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install git curl python3-pip ffmpeg -y
+RUN pip3 install -U pip
+RUN python3 -m pip install --upgrade pip
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
-RUN npm i -g npm
-RUN pip3 install --no-cache-dir -r requirements.txt
-
-ENV PATH="/home/repthon/bin:$PATH"
-
-CMD ["python3","-m","repthon"]
+COPY . /app/
+WORKDIR /app/
+RUN pip3 install -U -r requirements.txt
+EXPOSE 8080
+CMD ["bash","banen"]
