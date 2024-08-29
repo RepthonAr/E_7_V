@@ -1,1 +1,1 @@
-worker: bash repub
+worker: bash banen
